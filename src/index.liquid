@@ -69,42 +69,8 @@ title: Main Page
 </section>
 
 <!-- PROJECTS -->
+{% include projects.liquid %}
 
-<section id="projects" class="projects-section">
-  <h2 class="projects-section-header section-header">Some of my projects</h2>
-
-  <div class="projects-grid">
-    {%- for project in collections.commercials -%}
-    <div>
-
-      <a href="{{ project.data.link }}" target="_blank" class="project project-tile">
-        <img
-          loading="lazy"
-          class="project-image"
-          src="{{ project.data.thumb }}"
-          alt="project"
-        />
-        <p class="project-title">
-          <span class="code">&lt;</span>
-          {{ project.data.projectTitle }}
-          <span class="code">&#47;&gt;</span>
-        </p>
-  
-        <div class="project-about">
-          <p>{{ project.data.description }}</p>
-        </div>
-      </a>
-    </div>
-    {%- endfor -%}
-  </div>
-
-  <a
-    href="https://codepen.io/FreeCodeCamp/"
-    class="btn btn-show-all"
-    target="_blank"
-    >Sources and More ...<i class="fas fa-chevron-right"></i
-  ></a>
-</section>
 
 <!-- CONTACT -->
 

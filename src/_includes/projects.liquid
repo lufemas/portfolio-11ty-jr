@@ -1,0 +1,16 @@
+<section id="projects" class="projects-section">
+    <h2 class="projects-section-header section-header">Some of my projects</h2>
+
+    <h3 class="">Commercials</h3>
+
+
+    {% include project-grid.liquid projectCollection: collections.commercials, pre-fix:"commercial"%}
+
+    <h3 class="">Study Cases</h3>
+
+    {% include project-grid.liquid projectCollection: collections.study-cases, pre-fix="study-case"%}
+
+
+    <a href="https://codepen.io/FreeCodeCamp/" class="btn btn-show-all" target="_blank">Sources and More ...<i
+            class="fas fa-chevron-right"></i></a>
+</section>

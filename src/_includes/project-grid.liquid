@@ -1,0 +1,45 @@
+<div class="projects-grid">
+
+  {%- for project in projectCollection -%}
+
+    <!-- {% increment count %} -->
+    
+  <article class="project-cell">
+    <!-- <a href="{{ project.data.link }}" target="_blank" class="project project-tile"> -->
+    <div id="project-cover-{{pre-fix}}-{{count}}" 
+      data-target="project-description-{{pre-fix}}-{{count}}" 
+      class="project cover project-tile"
+    >
+      <img loading="lazy" class="project-image" src="{{ project.data.thumb }}" alt="project" />
+      <p class="project-title">
+        <span class="code">&lt;</span>
+        {{ project.data.projectTitle }}
+        <span class="code">&#47;&gt;</span>
+      </p>
+
+      <div class="project-about">
+        <p>{{ project.data.short-description }}</p>
+      </div>
+    <!-- </a> -->
+    </div>
+
+    <div id="project-description-{{pre-fix}}-{{count}}" class="project-description">
+      <h3>Description</h3>
+
+      {%- for paragraph in project.data.description -%}
+      <p>{{ paragraph }}</p>
+      {%- endfor -%}
+
+      {%- for link in project.data.links -%}
+      <p>
+        <strong>{{ link[0] }}:</strong>
+        <a targe="_blank" href={{link[1]}}>{{link[1]}}</a>
+      </p>
+      {%- endfor -%}
+
+
+    </div>
+
+  </article>
+  {%- endfor -%}
+</div>

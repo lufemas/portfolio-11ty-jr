@@ -409,6 +409,25 @@
     font-size: 2rem;
     padding: 2rem 0.5rem;
   }
+
+/* Project Description Pop-up */
+
+.project-description{
+  display: none;
+}
+
+.project-description.show{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-color: var(--main-green);
+  z-index: 10;
+  color: black;
+}
+
   
   .btn {
     display: inline-block;
@@ -614,7 +633,7 @@
   }
   
 
-    .projects-grid a{
+    .projects-grid .project-cell > a{
       cursor: pointer;
       display: flex;
       flex-direction: column-reverse;
