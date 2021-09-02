@@ -413,21 +413,67 @@
 /* Project Description Pop-up */
 
 .project-description{
-  display: none;
+  position: fixed;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 90vw;
+  height: 90vh;
+  background-color: var(--main-orange);
+  z-index: 10;
+  color: black;
+  transition: all .3s ease;
+  /* animation-name: project-description-fade-out; */
+  animation-duration: .5s;
+  /* animation-timing-function: cubic-bezier(0, -0.8, 0.265, 1.45); */
+  box-shadow: rgba(0, 0, 0, 0.2) 0em 0em 10em 10em, rgba(0, 0, 0, 0.75) .25em .25em 1em;}
+
+@keyframes project-description-fade-in {
+  /* 0%   {height: 0vh;width: 0vw;left:50%;top:50%;opacity: 0;}
+  100% {opacity: 100%;} */
+  0%   { transform: translate(-50%, -50%) scale(0)}
+  100% { transform: translate(-50%, -50%) scale(1);}
 }
 
+
+
 .project-description.show{
+  transform: translate(-50%, -50%) scale(1); 
+  animation-name: project-description-fade-in;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier(0, -0.8, 0.265, 1.45);
+  
+}
+
+/* .project-description.show:before{
+  content: "";
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.185);
+  filter: blur(1);
+  display: block;
+  z-index: -1;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: block;
-  background-color: var(--main-green);
-  z-index: 10;
-  color: black;
+} */
+
+.project-description button.close.button{
+  border: none;
+  background-color: transparent;
+  color: var(--dark-purple);
+  font-size: 1.5em;
+  position: absolute;
+  top: .5em;
+  right: 1em;
+  cursor: pointer;
+  transition: all .2s ease;
 }
 
+.project-description button.close.button:hover{
+  color: var(--main-purple);
+}
   
   .btn {
     display: inline-block;
